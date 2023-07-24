@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body
+        {background-image:url({% static 'images/login.jpg' %});
+        background-size:cover;
+        }
+        .lo
+        {
+            margin-left:600px;
+            margin-right:550px;
+            border:10px ridge plum;
+            background:white;
+            margin-top:250px;
+            padding:10px;
+         }
+    </style>
+</head>
+<body>
+<div class="lo">
+
+<form action="" method="POST" >
+    {% csrf_token %}
+    <h1 style="color:Tomato">Please Login here</h1>
+    <input type="text" name="username" placeholder="Enter your name"><br><br>
+    <input type="password" name="password" placeholder="Enter your password"><br><br>
+    <input type="submit" style="margin-left:70px;padding:10px";>
+</form>
+    {% for msg in messages %}
+    <h2>{{msg}}.Please enter again!</h2>
+    {% endfor %}
+    </div>
+</body>
+</html>
